@@ -6,10 +6,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 const host = process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0';
 
+app.use(express.json());
 app.use(cors({
   origin: '*',
 }));
-app.use(express.json());
 app.use('/', router);
 
 app.listen(port, () => {
