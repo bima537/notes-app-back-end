@@ -20,8 +20,10 @@
     "nodemon": "^3.1.14"
   },
   "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.1045.0",
     "cors": "^2.8.6",
     "express": "^5.2.1",
+    "joi": "^18.2.1",
     "nanoid": "^5.1.9"
   }
 }
