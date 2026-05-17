@@ -1,4 +1,5 @@
 const validate = (schema) => (req, res, next) => {
+  console.log('Middleware validate dipanggil!');
   const { error, value } = schema.validate(req.body, {
     abortEarly: false,
     allowUnknown: false,
@@ -8,6 +9,7 @@ const validate = (schema) => (req, res, next) => {
   if (error) return next(error);
 
   req.validated = value;
+  console.log('Data berhasil divalidasi:', req.validated);
   next();
 };
 
@@ -22,5 +24,4 @@ const validateQuery = (schema) => (req, res, next) => {
   next();
 };
 
-export default validate;
-export { validateQuery };
+export { validate, validateQuery };
